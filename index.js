@@ -14,33 +14,56 @@ function checkform() {
     const emailcheck = email.value.trim();
     const passwordcheck = password.value.trim();
     const password2check = password2.value.trim();
-    //username
+
+    // username
     if (usercheck === '') {
         setError(username, "Username cannot be blank");
     } else {
         setSuccess(username);
     }
-    //password
-    if(passwordcheck === '' ){
-        setError(password, "password cannot be blank");
-    }else{
-            setSuccess(password)
+
+    // password
+    if (passwordcheck === '') {
+        setError(password, "Password cannot be blank");
+    } else {
+        setSuccess(password);
     }
-    if(password2check === '' ){
-        setError(password2, "password cannot be blank");
-    }else if(passwordcheck !== password2check){
-        setError(password2, "password2 does not match");
-    }else{
-            setSuccess(password2)
+
+    if (password2check === '') {
+        setError(password2, "Password cannot be blank");
+    } else if (passwordcheck !== password2check) {
+        setError(password2, "Passwords do not match");
+    } else {
+        setSuccess(password2);
     }
-    //email
-     if (emailcheck === '') {
-        setError(email, "email cannot be blank");
-    }else if(!isemail(emailcheck)){
-        setError(email, "email is not valid");
+
+    // email
+    if (emailcheck === '') {
+        setError(email, "Email cannot be blank");
+    } else if (!isemail(emailcheck)) {
+        setError(email, "Email is not valid");
     } else {
         setSuccess(email);
     }
+
+   //  Clear form if all inputs are valid
+if (
+    username.parentElement.classList.contains("success") &&
+    email.parentElement.classList.contains("success") &&
+    password.parentElement.classList.contains("success") &&
+    password2.parentElement.classList.contains("success")
+) {
+    form.reset();
+    alert("Success");
+
+    // Reset form controls back to normal
+    const containers = document.querySelectorAll(".container");
+    containers.forEach(container => {
+        container.className = "container";  // remove success/error
+        
+    });
+}
+
 }
 
 function setError(input, message) {
@@ -55,7 +78,7 @@ function setSuccess(input) {
     const formControl = input.parentElement;
     formControl.className = "container success";
 }
+
 function isemail(email) {
     return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email);
 }
-

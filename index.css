@@ -71,6 +71,7 @@ button{
     height: 40px;
     border: none;
     background-color: #3498db;
+    transition: all 1s ease;
 
 }button:hover{
      background-color: #2b5f81;
