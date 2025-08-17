@@ -1,79 +1,153 @@
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #3498db;
-     height: 90vh;
+    min-height: 100vh;
+    margin: 0;
 }
-.main{
-    width: 400px;
-    height: 90%;
+
+
+.main {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+    min-height: 70vh;
     background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
 }
-#header{
+
+
+#header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(220, 220, 220, 0.562);
     font-family: sans-serif;
     font-weight: bold;
-    font-style: normal;
-}.container{
-    position: relative;
-    padding: 5px;
-    margin: 2px;
-}form{
     padding: 10px;
-    margin: 10px;
-}form label{
+}
+
+
+.container {
+    position: relative;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+form {
+    padding: 15px;
+    margin: 0 auto;
+}
+
+form label {
     display: inline-block;
     font-family: 'Times New Roman', Times, serif;
-    font-size: large;
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
-input{
+input {
     padding-left: 10px;
     display: block;
-    width: 330px;
-    height: 30px;
-}small{
+    width: 100%;
+    max-width: 100%;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+small {
     visibility: hidden;
     font-family: Arial, Helvetica, sans-serif;
-}.container i{
+    font-size: 0.8rem;
+}
+
+
+.container i {
     position: absolute;
-    top: 40px;
-    right: 19px;
+    top: 45px;
+    right: 15px;
     visibility: hidden;
-}.container.success i.fa-circle-check{
-    visibility:visible;
+}
+
+.container.success i.fa-circle-check {
+    visibility: visible;
     color: green;
-}.container.success input{
+}
+.container.success input {
     border: 2px solid green;
 }
-.container.error i.fa-circle-exclamation{
-    visibility:visible;
-    color: red;
-}.container.error input{
-    border: 2px solid red;
-}.container.error small{
+
+.container.error i.fa-circle-exclamation {
     visibility: visible;
     color: red;
 }
-.btn{
+.container.error input {
+    border: 2px solid red;
+}
+.container.error small {
+    visibility: visible;
+    color: red;
+}
+
+
+.btn {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-button{
+
+button {
     font-family: Arial, Helvetica, sans-serif;
-    font-weight: bolder;
-    font-size: large;
-    width: 300px;
-    height: 40px;
+    font-weight: bold;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
+    height: 45px;
     border: none;
     background-color: #3498db;
-    transition: all 1s ease;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
 
-}button:hover{
-     background-color: #2b5f81;
-     width: 330px;
+button:hover {
+    background-color: #2b5f81;
+    transform: scale(1.05);
+}
+
+
+@media screen and (max-width: 600px) {
+    .main {
+        width: 95%;
+        min-height: auto;
+    }
+
+    form label {
+        font-size: 0.9rem;
+    }
+
+    input {
+        height: 35px;
+    }
+
+    button {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) {
+    .main {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 901px) {
+    .main {
+        width: 50%;
+        max-width: 600px;
+    }
 }
