@@ -1,0 +1,74 @@
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3498db;
+     height: 90vh;
+}
+.main{
+    width: 400px;
+    height: 90%;
+    background-color: white;
+}
+#header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(220, 220, 220, 0.562);
+    font-family: sans-serif;
+    font-weight: bold;
+    font-style: normal;
+}.container{
+    position: relative;
+    padding: 5px;
+    margin: 2px;
+}form{
+    padding: 10px;
+    margin: 10px;
+}form label{
+    display: inline-block;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+input{
+    padding-left: 10px;
+    display: block;
+    width: 330px;
+    height: 30px;
+}small{
+    visibility: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+}.container i{
+    position: absolute;
+    top: 40px;
+    right: 19px;
+    visibility: hidden;
+}.container.success i.fa-circle-check{
+    visibility:visible;
+    color: green;
+}.container.success input{
+    border: 2px solid green;
+}
+.container.error i.fa-circle-exclamation{
+    visibility:visible;
+    color: red;
+}.container.error input{
+    border: 2px solid red;
+}.container.error small{
+    visibility: visible;
+    color: red;
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: large;
+    width: 330px;
+    height: 40px;
+    border: none;
+    background-color: #3498db;
+}
